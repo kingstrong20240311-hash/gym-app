@@ -1,0 +1,90 @@
+// 测试用的 iconfont，可生效
+// @import './iconfont.css';
+
+.test {
+  // 可以通过 @apply 多个样式封装整体样式
+  @apply mt-4 ml-4;
+
+  padding-top: 4px;
+  color: red;
+}
+
+:root,
+page {
+  /* Prototype Design Tokens - Light */
+  --wot-color-theme: #19e65e;
+  --wot-color-success: #10b981;
+  --wot-color-warning: #fbbf24;
+  --wot-color-danger: #ef4444;
+
+  --wot-color-bg: #f6f8f6;
+  --wot-color-white: #ffffff;
+  --wot-color-title: #111921;
+  --wot-color-content: #1c2b21;
+  --wot-color-secondary: #9db8a6;
+  --wot-color-aid: #9db9a6;
+  --wot-color-border: #d9e2dc;
+  --wot-color-border-light: #e8efea;
+
+  --wot-button-primary-bg-color: #19e65e;
+  --wot-button-primary-color: #102216;
+
+  /* Semantic tokens for UnoCSS and page styles */
+  --app-color-primary: #19e65e;
+  --app-color-primary-dark: #0ea842;
+  --app-color-background-light: #f6f8f6;
+  --app-color-background-dark: #102216;
+  --app-color-surface-light: #ffffff;
+  --app-color-surface-dark: #1c2b21;
+  --app-color-text-secondary: #9db8a6;
+  --app-color-success: #10b981;
+  --app-color-warning: #fbbf24;
+  --app-color-danger: #ef4444;
+}
+
+.dark page,
+page.dark,
+.dark {
+  /* Prototype Design Tokens - Dark */
+  --wot-color-bg: #102216;
+  --wot-color-white: #1c2b21;
+  --wot-color-title: #ffffff;
+  --wot-color-content: #e7f3eb;
+  --wot-color-secondary: #9db8a6;
+  --wot-color-aid: #9db9a6;
+  --wot-color-border: #2a4030;
+  --wot-color-border-light: #233328;
+
+  --wot-dark-background: #102216;
+  --wot-dark-background2: #1c2b21;
+  --wot-dark-background3: #162b1e;
+  --wot-dark-background4: #2a4030;
+  --wot-dark-background5: #9db8a6;
+  --wot-dark-background6: #1a261e;
+  --wot-dark-background7: #1a2e20;
+  --wot-dark-color: #ffffff;
+  --wot-dark-color2: #19e65e;
+  --wot-dark-color3: #9db8a6;
+  --wot-dark-color-gray: #9db8a6;
+  --wot-dark-border-color: #2a4030;
+
+  --wot-button-primary-bg-color: #19e65e;
+  --wot-button-primary-color: #102216;
+}
+
+/*
+border-t-1
+由于uniapp中无法使用*选择器，使用魔法代替*，加上此规则可以简化border与divide的使用，并提升布局的兼容性
+1. 防止padding和border影响元素宽度。 (https://github.com/mozdevs/cssremedy/issues/4)
+2. 允许仅通过添加边框宽度来向元素添加边框。 (https://github.com/tailwindcss/tailwindcss/pull/116)
+3. [UnoCSS]: 允许使用css变量'--un-default-border-color'覆盖默认边框颜色
+*/
+// 这个样式有重大BUG，先去掉！！(2025-08-15)
+// :not(not),
+// ::before,
+// ::after {
+//   box-sizing: border-box; /* 1 */
+//   border-width: 0; /* 2 */
+//   border-style: solid; /* 2 */
+//   border-color: var(--un-default-border-color, #e5e7eb); /* 3 */
+// }
